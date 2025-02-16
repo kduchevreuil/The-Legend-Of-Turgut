@@ -27,7 +27,9 @@ function drawGame() {
     function drawImage() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(mapImage, 0, 0, mapImage.width, mapImage.height);
+        // afficher turgut en premier plan
         ctx.drawImage(turgutImage, turgutX, turgutY, turgutWidth, turgutHeight);
+
     }
 
     function checkColorCollision() {
@@ -87,15 +89,15 @@ function drawGame() {
             // Gérer les mouvements horizontaux
             if (axe1 >= 0.7) {
                 xAxis = 1; // Droite
-                turgutImage.src = "../imagesOfTurgut/turgutDown1.png";
+                turgutImage.src = "../imagesOfTurgut/Layer 1_sprite_02.png";
                 counterWalk++;
             } else if (axe1 <= -0.7) {
                 xAxis = -1; // Gauche
-                turgutImage.src = "../imagesOfTurgut/turgutDown2.png";
+                turgutImage.src = "../imagesOfTurgut/Layer 1_sprite_04.png";
                 counterWalk++;
             } else {
                 xAxis = 0; // Aucun mouvement horizontal
-                turgutImage.src = "../imagesOfTurgut/turgutDownStay.png";
+                turgutImage.src = "../imagesOfTurgut/Layer 1_sprite_02.png";
             }
             // Gérer les mouvements verticaux
             if (axe2 >= 0.7) {

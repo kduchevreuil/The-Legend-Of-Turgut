@@ -1,30 +1,66 @@
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css/k.css" />
-    <link rel="stylesheet" href="./style.css/z.css" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="./favicon/kayiobasi.png" type="image/x-icon" />
+    <title>The legend of Robin</title>
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <main>
-      <div class="container">
-        <div class="left">
-          <div class="top">
-            <h1>Sign Up</h1>
-            <p>Already have an account? <a href="#">Sign In</a></p>
-          </div>
-          <div class="bottom">
-            <form action="#">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" />
-              </div>
-            </form>
-          </div>
+    <!--
+_|_|_|_|_|  _|                      _|                                                      _|  
+    _|      _|_|_|      _|_|        _|          _|_|      _|_|_|    _|_|    _|_|_|      _|_|_|  
+    _|      _|    _|  _|_|_|_|      _|        _|_|_|_|  _|    _|  _|_|_|_|  _|    _|  _|    _|  
+    _|      _|    _|  _|            _|        _|        _|    _|  _|        _|    _|  _|    _|  
+    _|      _|    _|    _|_|_|      _|_|_|_|    _|_|_|    _|_|_|    _|_|_|  _|    _|    _|_|_|  
+                                                              _|                                
+                                                          _|_|                                  
+                                                                                      
+  _|_|        _|_|      _|_|_|_|_|                                            _|      
+_|    _|    _|              _|      _|    _|  _|  _|_|    _|_|_|  _|    _|  _|_|_|_|  
+_|    _|  _|_|_|_|          _|      _|    _|  _|_|      _|    _|  _|    _|    _|      
+_|    _|    _|              _|      _|    _|  _|        _|    _|  _|    _|    _|      
+  _|_|      _|              _|        _|_|_|  _|          _|_|_|    _|_|_|      _|_|  
+                                                              _|                      
+                                                          _|_|                                         
+                                                                                                                                                                                                                            
+-->
+    <div id="allScreen">
+      <div id="halfJoystick" class="leftJoystick">
+        <div class="LTLBButton">
+          <div class="LTButton" id="RTLTLBRB"></div>
+          <div class="LBButton" id="RTLTLBRB"></div>
+        </div>
+        <div id="crossOfHalfJoystick">
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
+          <div id="directionOfCross"></div>
         </div>
       </div>
-    </main>
+      <canvas id="canvas"></canvas>
+      <div id="halfJoystick" class="rightJoystick">
+        <div class="RTRBButton">
+          <div class="RTButton" id="RTLTLBRB"></div>
+          <div class="RBButton" id="RTLTLBRB"></div>
+        </div>
+        <div id="buttonYOfHalfJoystick"></div>
+        <div id="buttonXOfHalfJoystick"></div>
+        <div id="buttonBOfHalfJoystick"></div>
+        <div id="buttonAOfHalfJoystick"></div>
+      </div>
+    </div>
   </body>
   <script type="module" src="./scripts/script.js"></script>
 </html>
