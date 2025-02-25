@@ -25,7 +25,7 @@ function drawGame() {
   let turgutY = 110;
   const turgutWidth = 16;
   const turgutHeight = 16;
-  const turgutSpeed = 3;
+  const turgutSpeed = 1.5;
   let counterWalk = 0;
   let currentImage = turgutImages.idle;
   let xAxis = 0;
