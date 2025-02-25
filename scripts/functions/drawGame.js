@@ -15,19 +15,17 @@ function drawGame() {
         down: new Image(),
         idle: new Image(),
     };
-
-    turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-    turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-    turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-    turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
+    turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
+    turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
+    turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_17.png";
+    turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_26.png";
     turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-
 
     let turgutX = 120;
     let turgutY = 110;
     const turgutWidth = 16;
     const turgutHeight = 16;
-    const turgutSpeed = 3;
+    const turgutSpeed = 1.5;
     let counterWalk = 0;
     let currentImage = turgutImages.idle;
     let xAxis = 0;
