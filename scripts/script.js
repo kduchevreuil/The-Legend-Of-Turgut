@@ -2,6 +2,7 @@
 import Joypad from "./functions/joypad.js";
 import responsiveCanvas from "./functions/responsiveCanvas.js";
 import drawGame from "./functions/drawGame.js";
+import animationOfResponsiveJoystick from "./functions/animationOfResponsiveJoystick.js";
 
 const prohibitedColors = ["#3d34a5", "#aE6c37"];
 const canvas = document.querySelector("#canvas");
@@ -16,6 +17,7 @@ window.addEventListener('resize', draw);
 function draw() {
     // Fonction qui n'ont pas besoin d'être redessinées
     responsiveCanvas();
+    animationOfResponsiveJoystick();
     //responsiveJoystick();
     // Fonction qui ont besoin d'être redessinées
     setTimeout(function () {
