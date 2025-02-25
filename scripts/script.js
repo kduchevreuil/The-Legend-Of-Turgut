@@ -7,7 +7,7 @@ const prohibitedColors = ["#3d34a5", "#aE6c37"];
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
-let fps = 5;
+let fps = 1;
 // Déplacement de Robin
 const body = document.querySelector("body");
 // redimensionnement du canvas
