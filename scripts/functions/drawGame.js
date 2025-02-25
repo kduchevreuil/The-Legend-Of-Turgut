@@ -17,9 +17,7 @@ function drawGame() {
     };
 
     turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-    turgutImages.left01.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-    turgutImages.left02.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
-    turgutImages.left03.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
+    turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
     turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
     turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
     turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
