@@ -1,5 +1,5 @@
 
-import Joypad from "./functions/joypad.js";
+import joypad from "./functions/joypad.js";
 import responsiveCanvas from "./functions/responsiveCanvas.js";
 import drawGame from "./functions/drawGame.js";
 import animationOfResponsiveJoystick from "./functions/animationOfResponsiveJoystick.js";
@@ -23,7 +23,7 @@ function draw() {
     setTimeout(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawGame();
-        Joypad();
+        joypad();
         //animationOfResponsiveJoystick();
     }, 1000 / fps);
 

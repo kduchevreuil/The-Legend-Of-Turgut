@@ -1,5 +1,5 @@
 // Fonction de la manette (dans la boucle du jeu)
-function Joypad() {
+function joypad() {
     let gamepadConnected = false;
 
     window.addEventListener("gamepadconnected", (e) => {
@@ -93,4 +93,4 @@ function Joypad() {
     loop();
 }
 
-export default Joypad;
+export default joypad;
