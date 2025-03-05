@@ -103,6 +103,7 @@ function drawGame() {
 
 
 
+
     // Fonction de dessin
     function drawImage() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -129,5 +130,6 @@ function drawGame() {
       gameLoop();
     };
   }
+}
 
-  export default drawGame;
+export default drawGame;
