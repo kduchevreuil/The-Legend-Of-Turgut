@@ -10,19 +10,28 @@ function drawGame() {
 
   const turgutImages = {
     right: new Image(),
-    right2: new Image(),
     left: new Image(),
     up: new Image(),
     down: new Image(),
     idle: new Image(),
   };
 
+  const turgutImagesMouv = {
+    right2: new Image(),
+    left2: new Image(),
+    up2: new Image(),
+    down2: new Image(),
+  };
   turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
-  turgutImages.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
   turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
   turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_17.png";
-  turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_26.png";
-  // turgutImages.idle;
+  turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_14.png";
+  turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
+
+  turgutImagesMouv.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
+  turgutImagesMouv.left2.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
+  turgutImagesMouv.up2.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
+  turgutImagesMouv.down2.src = "../../ImagesOfTurgut/Layer 1_sprite_15.png";
 
   let turgutX = 120;
   let turgutY = 110;
@@ -50,13 +59,29 @@ function drawGame() {
     const axe2 = gp.axes[1]; // Axe vertical
 
     // Gestion des axes horizontaux
+    let isRed = true;
     if (axe1 >= 0.7) {
       xAxis = 1;
-      currentImage = turgutImages.right;
+      setInterval(() => {
+        if (isRed) {
+          currentImage = turgutImages.right;
+        } else {
+          currentImage = turgutImagesMouv.right2;
+        }
+        isRed = !isRed;
+      }, 1000);
       turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
     } else if (axe1 <= -0.7) {
       xAxis = -1;
-      currentImage = turgutImages.left;
+      let isleft = true;
+      setInterval(() => {
+        if (isleft) {
+          currentImage = turgutImages.left;
+        } else {
+          currentImage = turgutImagesMouv.left2;
+        }
+        isleft = !isleft;
+      }, 1000);
       turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
     } else {
       xAxis = 0;
@@ -66,11 +91,12 @@ function drawGame() {
     if (axe2 >= 0.7) {
       yAxis = 1;
       currentImage = turgutImages.down;
-      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_27.png";
+      currentImage;
+      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
     } else if (axe2 <= -0.7) {
       yAxis = -1;
       currentImage = turgutImages.up;
-      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_18.png";
+      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_04.png";
     } else {
       yAxis = 0;
     }
