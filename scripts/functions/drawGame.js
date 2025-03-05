@@ -101,41 +101,33 @@ function drawGame() {
       yAxis = 0;
     }
 
-    // Animation du personnage
-    if (xAxis !== 0 || yAxis !== 0) {
-      counterWalk++;
-      if (counterWalk > 3) counterWalk = 0;
-    } else {
-      currentImage = turgutImages.idle;
-      counterWalk = 0;
+
+
+    // Fonction de dessin
+    function drawImage() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(mapImage, 0, 0, mapImage.width, mapImage.height);
+      ctx.drawImage(currentImage, turgutX, turgutY, turgutWidth, turgutHeight);
     }
+
+    // Événement de connexion de la manette
+    window.addEventListener("gamepadconnected", () => {
+      console.log("Manette connectée !");
+    });
+
+    // Fonction principale appelée dans la boucle
+    function gameLoop() {
+      updateGamepad(); // Met à jour les inputs de la manette
+      updatePosition(); // Applique les mouvements
+      drawImage(); // Dessine l'image
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Démarrer la boucle du jeu une fois que l'image de la carte est chargée
+    mapImage.onload = () => {
+      gameLoop();
+    };
   }
 
-  // Fonction de dessin
-  function drawImage() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(mapImage, 0, 0, mapImage.width, mapImage.height);
-    ctx.drawImage(currentImage, turgutX, turgutY, turgutWidth, turgutHeight);
-  }
-
-  // Événement de connexion de la manette
-  window.addEventListener("gamepadconnected", () => {
-    console.log("Manette connectée !");
-  });
-
-  // Fonction principale appelée dans la boucle
-  function gameLoop() {
-    updateGamepad(); // Met à jour les inputs de la manette
-    updatePosition(); // Applique les mouvements
-    drawImage(); // Dessine l'image
-
-    requestAnimationFrame(gameLoop);
-  }
-
-  // Démarrer la boucle du jeu une fois que l'image de la carte est chargée
-  mapImage.onload = () => {
-    gameLoop();
-  };
-}
-
-export default drawGame;
+  export default drawGame;

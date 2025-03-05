@@ -19,22 +19,16 @@ function joypad() {
     });
 
     function update() {
-        if (!gamepadConnected) return;
 
+        // Arrêter la fonction si aucune manette n'est connectée
+        if (!gamepadConnected) return;
+        // Afficher les informations de la manette en console
         let gp = navigator.getGamepads()[0];
         if (gp) {
             let axe1 = gp.axes[0];
             let axe2 = gp.axes[1];
             let axe3 = gp.axes[3];
             let axe4 = gp.axes[2];
-
-
-
-
-
-            if (axe1 >= 0.7 || axe1 <= -0.7 || axe2 >= 0.7 || axe2 <= -0.7 || axe3 >= 0.7 || axe3 <= -0.7 || axe4 >= 0.7 || axe4 <= -0.7) {
-                //console.log(axe1, axe2, axe3, axe4);
-            }
 
             if (axe1 >= 0.7) {
                 console.log("Droite");
