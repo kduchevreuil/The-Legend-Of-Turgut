@@ -49,87 +49,59 @@ function drawGame() {
     turgutY += yAxis * turgutSpeed;
   }
 
-  // Fonction de mise à jour des entrées de la manette
-  function updateGamepad() {
-    const gamepads = navigator.getGamepads();
-    if (!gamepads[0]) return; // Vérifie si une manette est connectée
 
-    const gp = gamepads[0];
-    const axe1 = gp.axes[0]; // Axe horizontal
-    const axe2 = gp.axes[1]; // Axe vertical
+  const gamepads = navigator.getGamepads();
+  if (!gamepads[0]) return; // Vérifie si une manette est connectée
 
-    // Gestion des axes horizontaux
-    let isRed = true;
-    if (axe1 >= 0.7) {
-      xAxis = 1;
-      setInterval(() => {
-        if (isRed) {
-          currentImage = turgutImages.right;
-        } else {
-          currentImage = turgutImagesMouv.right2;
-        }
-        isRed = !isRed;
-      }, 1000);
-      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
-    } else if (axe1 <= -0.7) {
-      xAxis = -1;
-      let isleft = true;
-      setInterval(() => {
-        if (isleft) {
-          currentImage = turgutImages.left;
-        } else {
-          currentImage = turgutImagesMouv.left2;
-        }
-        isleft = !isleft;
-      }, 1000);
-      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
-    } else {
-      xAxis = 0;
-    }
+  const gp = gamepads[0];
+  const axe1 = gp.axes[0]; // Axe horizontal
+  const axe2 = gp.axes[1]; // Axe vertical
+  const axe3 = gp.axes[3]; // Axe horizontal droit
+  const axe4 = gp.axes[2]; // Axe vertical droit
+  const buttonA = gp.buttons[0].pressed;
+  const buttonB = gp.buttons[1].pressed;
+  const buttonX = gp.buttons[2].pressed;
+  const buttonY = gp.buttons[3].pressed;
+  const buttonLB = gp.buttons[4].pressed;
+  const buttonRB = gp.buttons[5].pressed;
+  const buttonLT = gp.buttons[6].pressed;
+  const buttonRT = gp.buttons[7].pressed;
+  const buttonSelect = gp.buttons[8].pressed;
+  const buttonStart = gp.buttons[9].pressed;
+  const buttonPushDirection = gp.buttons[10].pressed;
+  const buttonPushIso = gp.buttons[11].pressed;
+  const buttonHautPave = gp.buttons[12].pressed;
+  const buttonBasPave = gp.buttons[13].pressed;
+  const buttonGauchePave = gp.buttons[14].pressed;
+  const buttonDroitePave = gp.buttons[15].pressed;
 
-    // Gestion des axes verticaux
-    if (axe2 >= 0.7) {
-      yAxis = 1;
-      currentImage = turgutImages.down;
-      currentImage;
-      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
-    } else if (axe2 <= -0.7) {
-      yAxis = -1;
-      currentImage = turgutImages.up;
-      turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_04.png";
-    } else {
-      yAxis = 0;
-    }
+  // Afficher en console les boutons pressés et les directions >= 0.7 
 
-
-
-
-    // Fonction de dessin
-    function drawImage() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(mapImage, 0, 0, mapImage.width, mapImage.height);
-      ctx.drawImage(currentImage, turgutX, turgutY, turgutWidth, turgutHeight);
-    }
-
-    // Événement de connexion de la manette
-    window.addEventListener("gamepadconnected", () => {
-      console.log("Manette connectée !");
-    });
-
-    // Fonction principale appelée dans la boucle
-    function gameLoop() {
-      updateGamepad(); // Met à jour les inputs de la manette
-      updatePosition(); // Applique les mouvements
-      drawImage(); // Dessine l'image
-
-      requestAnimationFrame(gameLoop);
-    }
-
-    // Démarrer la boucle du jeu une fois que l'image de la carte est chargée
-    mapImage.onload = () => {
-      gameLoop();
-    };
+  // Fonction de dessin
+  function drawImage() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(mapImage, 0, 0, mapImage.width, mapImage.height);
+    ctx.drawImage(currentImage, turgutX, turgutY, turgutWidth, turgutHeight);
   }
+
+  // Événement de connexion de la manette
+  window.addEventListener("gamepadconnected", () => {
+    console.log("Manette connectée !");
+  });
+
+  // Fonction principale appelée dans la boucle
+  function gameLoop() {
+    updatePosition(); // Applique les mouvements
+    drawImage(); // Dessine l'image
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  // Démarrer la boucle du jeu une fois que l'image de la carte est chargée
+  mapImage.onload = () => {
+    gameLoop();
+  };
 }
+
 
 export default drawGame;

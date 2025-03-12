@@ -7,27 +7,35 @@ function AfficheLesAxesEtTouchesGP() {
 
     if (axe1 >= 0.7) {
         console.log("Droite");
+        console.log("Axe1 :" + axe1);
     }
     if (axe1 <= -0.7) {
         console.log("Gauche");
+        console.log("Axe1 :" + axe1);
     }
     if (axe2 >= 0.7) {
         console.log("Bas");
+        console.log("Axe2 :" + axe2);
     }
     if (axe2 <= -0.7) {
         console.log("Haut");
+        console.log("Axe2 :" + axe2);
     }
     if (axe3 >= 0.7) {
         console.log("Bas");
+        console.log("Axe3 :" + axe3);
     }
     if (axe3 <= -0.7) {
         console.log("Haut");
+        console.log("Axe3 :" + axe3);
     }
     if (axe4 >= 0.7) {
         console.log("Droite");
+        console.log("Axe4 :" + axe4);
     }
     if (axe4 <= -0.7) {
         console.log("Gauche");
+        console.log("Axe4 :" + axe4);
     }
     if (gp.buttons[0].pressed) console.log("Button A");
     if (gp.buttons[1].pressed) console.log("Button B");
@@ -41,13 +49,10 @@ function AfficheLesAxesEtTouchesGP() {
     if (gp.buttons[9].pressed) console.log("Start");
     if (gp.buttons[10].pressed) console.log("Push sur la direction");
     if (gp.buttons[11].pressed) console.log("Push sur l'iso");
-    if (gp.buttons[12].pressed) { console.log("Haut"); }
-    if (gp.buttons[13].pressed) { console.log("Bas"); }
-    if (gp.buttons[14].pressed) { console.log("Gauche"); }
-    if (gp.buttons[15].pressed) { console.log("Droite"); }
-    if (gp.buttons[16].pressed) { console.log("Haut"); }
-
-
+    if (gp.buttons[12].pressed) { console.log("Haut pavé"); }
+    if (gp.buttons[13].pressed) { console.log("Bas pavé"); }
+    if (gp.buttons[14].pressed) { console.log("Gauche pavé"); }
+    if (gp.buttons[15].pressed) { console.log("Droite pavé"); }
 
 }
 export default AfficheLesAxesEtTouchesGP;
