@@ -50,7 +50,7 @@ function drawGame() {
   }
 
   const gamepads = navigator.getGamepads();
-  if (!gamepads[0]) return; // Vérifie si une manette est connectée
+  if (!gamepads[0]) return; // Vérifie si une manette est connecté
 
   const gp = gamepads[0];
   const axe1 = gp.axes[0]; // Axe horizontal
