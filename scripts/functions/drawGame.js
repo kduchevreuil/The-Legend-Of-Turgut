@@ -83,10 +83,6 @@ function drawGame() {
   let infoAxe3 = axe3;
   let infoAxe4 = axe4;
   setInterval(() => {
-    infoAxe1 = axe1;
-    infoAxe2 = axe2;
-    infoAxe3 = axe3;
-    infoAxe4 = axe4;
     // Axe 1 (droite)
     if (infoAxe1 >= 0.2 && directionActuelle != "droite") {
       directionActuelle = "droite";
@@ -95,7 +91,7 @@ function drawGame() {
       console.log("axe1", axe1);
       console.log("directionActuelle", directionActuelle);
     }
-    if (directionActuelle == "droite" && infoAxe1 < 0.1) {
+    if (axe1 > 0 && infoAxe1 < 0.1) {
       console.log("axe1 (droite) est désactivé");
       console.log("axe1", axe1);
       console.log("directionActuelle", directionActuelle);
