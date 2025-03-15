@@ -78,28 +78,30 @@ function drawGame() {
   // Afficher en console les boutons pressés et les directions >= 0.7 
   let directionActuelle = "vide";
   // vérifier l'état des axes toutes les 100ms
+
   let infoAxe1 = axe1;
   let infoAxe2 = axe2;
   let infoAxe3 = axe3;
   let infoAxe4 = axe4;
-
   setInterval(() => {
-
+    infoAxe1 = axe1;
+    infoAxe2 = axe2;
+    infoAxe3 = axe3;
+    infoAxe4 = axe4;
     // Axe 1 (droite)
-    if (infoAxe1 >= 0.1 && directionActuelle != "droite") {
+    if (infoAxe1 >= 0.2 && directionActuelle != "droite") {
       directionActuelle = "droite";
       infoAxe1 = 1;
       console.log("axe1 (droite) est activé");
       console.log("axe1", axe1);
       console.log("directionActuelle", directionActuelle);
 
-
-    } else if (directionActuelle == "droite" && infoAxe1 < 0.5) {
-      infoAxe1 = 0;
-      directionActuelle = "vide";
+    } if (directionActuelle == "droite" && infoAxe1 < 0.1) {
       console.log("axe1 (droite) est désactivé");
       console.log("axe1", axe1);
       console.log("directionActuelle", directionActuelle);
+      infoAxe1 = 0;
+      directionActuelle = "vide";
     }
   }, 100);
 
