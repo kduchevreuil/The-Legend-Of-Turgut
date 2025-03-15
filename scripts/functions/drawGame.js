@@ -14,9 +14,6 @@ function drawGame() {
     up: new Image(),
     down: new Image(),
     idle: new Image(),
-  };
-
-  const turgutImagesMouv = {
     right2: new Image(),
     left2: new Image(),
     up2: new Image(),
@@ -24,14 +21,14 @@ function drawGame() {
   };
   turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
   turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
-  turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_17.png";
+  turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_05.png";
   turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_14.png";
   turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
 
-  turgutImagesMouv.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
-  turgutImagesMouv.left2.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
-  turgutImagesMouv.up2.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
-  turgutImagesMouv.down2.src = "../../ImagesOfTurgut/Layer 1_sprite_15.png";
+  turgutImages.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
+  turgutImages.left2.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
+  turgutImages.up2.src = "../../ImagesOfTurgut/Layer 1_sprite_06.png";
+  turgutImages.down2.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
 
   let turgutX = 120;
   let turgutY = 110;
@@ -83,22 +80,42 @@ function drawGame() {
   let infoAxe3 = axe3;
   let infoAxe4 = axe4;
   setInterval(() => {
-    // Axe 1 (droite)
-    if (infoAxe1 >= 0.2 && directionActuelle != "droite") {
+    // Axe 1 (droite) deplacement
+
+    if (infoAxe1 >= 0.3 && directionActuelle != "droite") {
       directionActuelle = "droite";
       infoAxe1 = 1;
       console.log("axe1 (droite) est activé");
-      console.log("axe1", axe1);
-      console.log("directionActuelle", directionActuelle);
     }
-    if (axe1 > 0 && infoAxe1 < 0.1) {
-      console.log("axe1 (droite) est désactivé");
-      console.log("axe1", axe1);
-      console.log("directionActuelle", directionActuelle);
-      infoAxe1 = 0;
+    if (axe1 > 0 && infoAxe1 < 0.2) {
       directionActuelle = "vide";
+      infoAxe1 = 0;
+      console.log("axe1 (droite) est désactivé");
     }
   }, 100);
+
+  // Axe 1 image
+
+  if (infoAxe1 >= 0.3 && directionActuelle != "droite") {
+    // currentImage = turgutImages.right;
+    turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
+  }
+  if (axe1 > 0 && infoAxe1 < 0.3) {
+    directionActuelle = "vide";
+    infoAxe1 = 0;
+    console.log("axe1 (droite) est désactivé");
+    currentImage = turgutImages.right2;
+  }
+
+  if (infoAxe1 <= -0.3 && directionActuelle != "gauche") {
+    turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
+  }
+  if (axe1 < 0 && infoAxe1 > -0.2) {
+    directionActuelle = "vide";
+    infoAxe1 = 0;
+    console.log("axe1 (gauche) est désactivé");
+    currentImage = turgutImages.left2;
+  }
 
   // Fonction de dessin
   function drawImage() {
