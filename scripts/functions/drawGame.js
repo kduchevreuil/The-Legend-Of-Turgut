@@ -95,26 +95,13 @@ function drawGame() {
   }, 100);
 
   // Axe 1 image
-
   if (infoAxe1 >= 0.3 && directionActuelle != "droite") {
-    // currentImage = turgutImages.right;
-    turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
+    currentImage = turgutImages.right;
+    turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
   }
-  if (axe1 > 0 && infoAxe1 < 0.3) {
-    directionActuelle = "vide";
-    infoAxe1 = 0;
-    console.log("axe1 (droite) est désactivé");
-    currentImage = turgutImages.right2;
-  }
-
   if (infoAxe1 <= -0.3 && directionActuelle != "gauche") {
-    turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
-  }
-  if (axe1 < 0 && infoAxe1 > -0.2) {
-    directionActuelle = "vide";
-    infoAxe1 = 0;
-    console.log("axe1 (gauche) est désactivé");
-    currentImage = turgutImages.left2;
+    currentImage = turgutImages.right;
+    turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
   }
 
   // Fonction de dessin
