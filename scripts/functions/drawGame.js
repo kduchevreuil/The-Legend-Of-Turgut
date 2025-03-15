@@ -1,3 +1,10 @@
+let turgutX = 120;
+let turgutY = 110;
+const turgutWidth = 16;
+const turgutHeight = 16;
+let counterWalk = 0;
+let currentImage;
+
 function drawGame() {
   // Configuration du canvas
   const canvas = document.getElementById("canvas");
@@ -7,7 +14,6 @@ function drawGame() {
   // Chargement des images
   const mapImage = new Image();
   mapImage.src = "./imageOfMap/map.png";
-
   const turgutImages = {
     right: new Image(),
     left: new Image(),
@@ -18,38 +24,29 @@ function drawGame() {
     left2: new Image(),
     up2: new Image(),
     down2: new Image(),
+    rightStay: new Image(),
+    leftStay: new Image(),
+    upStay: new Image(),
+    downStay: new Image()
+
   };
-  turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
+  turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_09.png";
   turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
   turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_05.png";
   turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_14.png";
   turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
 
-  turgutImages.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_07.png";
+  turgutImages.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
   turgutImages.left2.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
   turgutImages.up2.src = "../../ImagesOfTurgut/Layer 1_sprite_06.png";
   turgutImages.down2.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
 
-  let turgutX = 120;
-  let turgutY = 110;
-  const turgutWidth = 16;
-  const turgutHeight = 16;
-  const turgutSpeed = 1;
-  let counterWalk = 0;
-  let currentImage = turgutImages.idle;
-  let xAxis = 0;
-  let yAxis = 0;
 
-  // Fonction appelée par la boucle principale
-  function updatePosition() {
-    turgutX += xAxis * turgutSpeed;
-    turgutY += yAxis * turgutSpeed;
-  }
+  if (counterWalk > 2) {
+    counterWalk = 0;
+  };
 
-  const gamepads = navigator.getGamepads();
-  if (!gamepads[0]) return; // Vérifie si une manette est connecté
-
-  const gp = gamepads[0];
+  const gp = navigator.getGamepads()[0];
   const axe1 = gp.axes[0]; // Axe horizontal
   const axe2 = gp.axes[1]; // Axe vertical
   const axe3 = gp.axes[3]; // Axe horizontal droit
@@ -70,6 +67,10 @@ function drawGame() {
   const buttonBasPave = gp.buttons[13].pressed;
   const buttonGauchePave = gp.buttons[14].pressed;
   const buttonDroitePave = gp.buttons[15].pressed;
+  // Fonction appelée par la boucle principale
+  const gamepads = navigator.getGamepads();
+  if (!gamepads[0]) return; // Vérifie si une manette est connecté
+
 
   // Afficher en console les boutons pressés et les directions >= 0.7
   let directionActuelle = "vide";
@@ -79,43 +80,104 @@ function drawGame() {
   let infoAxe2 = axe2;
   let infoAxe3 = axe3;
   let infoAxe4 = axe4;
-  setInterval(() => {
-    // Axe 1 (droite) deplacement
 
-    if (infoAxe1 >= 0.3 && directionActuelle != "droite") {
-      directionActuelle = "droite";
-      infoAxe1 = 1;
-      console.log("axe1 (droite) est activé");
-    }
-    if (axe1 > 0 && infoAxe1 < 0.2) {
-      directionActuelle = "vide";
-      infoAxe1 = 0;
-      console.log("axe1 (droite) est désactivé");
-    }
-  }, 100);
-
-  // Axe 1 image
-
-  if (infoAxe1 >= 0.3 && directionActuelle != "droite") {
-    // currentImage = turgutImages.right;
-    turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
+  // Vérification des axes
+  infoAxe1 = axe1;
+  infoAxe2 = axe2;
+  infoAxe3 = axe3;
+  infoAxe4 = axe4;
+  // Gestion des axes avec priorités pour éviter conflits
+  if (infoAxe1 >= 0.3 && directionActuelle !== "droite") {
+    counterWalk++;
+    directionActuelle = "droite";
+    infoAxe1 = axe1;
+    infoAxe2 = 0;
+    infoAxe3 = 0;
+    infoAxe4 = 0;
+    console.log("axe1 (droite) est activé");
   }
-  if (axe1 > 0 && infoAxe1 < 0.3) {
-    directionActuelle = "vide";
+  if (infoAxe1 <= -0.3 && directionActuelle !== "gauche") {
+    counterWalk++;
+    directionActuelle = "gauche";
+    infoAxe1 = axe1;
+    infoAxe2 = 0;
+    infoAxe3 = 0;
+    infoAxe4 = 0;
+    console.log("axe1 (gauche) est activé");
+  }
+  if (infoAxe2 >= 0.3 && directionActuelle !== "bas") {
+    counterWalk++;
+    directionActuelle = "bas";
     infoAxe1 = 0;
-    console.log("axe1 (droite) est désactivé");
-    currentImage = turgutImages.right2;
+    infoAxe2 = axe2;
+    infoAxe3 = 0;
+    infoAxe4 = 0;
+    console.log("axe2 (bas) est activé");
+  }
+  if (infoAxe2 <= -0.3 && directionActuelle !== "haut") {
+    counterWalk++;
+    directionActuelle = "haut";
+    infoAxe1 = 0;
+    infoAxe2 = axe2;
+    infoAxe3 = 0;
+    infoAxe4 = 0;
+    console.log("axe2 (haut) est activé");
   }
 
-  if (infoAxe1 <= -0.3 && directionActuelle != "gauche") {
-    turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
+  if (directionActuelle == "droite") {
+    // alternance des images pour l'animation
+    if (counterWalk % 2 == 0) {
+      currentImage = turgutImages.right;
+      console.log("droite");
+      turgutX = turgutX + 3;
+    } else {
+      currentImage = turgutImages.right2;
+      console.log("droite2");
+      turgutX = turgutX + 3;
+    }
   }
-  if (axe1 < 0 && infoAxe1 > -0.2) {
-    directionActuelle = "vide";
-    infoAxe1 = 0;
-    console.log("axe1 (gauche) est désactivé");
-    currentImage = turgutImages.left2;
+
+  if (directionActuelle == "gauche") {
+    // alternance des images pour l'animation
+    if (counterWalk % 2 == 0) {
+      currentImage = turgutImages.left;
+      console.log("gauche");
+      turgutX = turgutX - 3;
+    } else {
+      currentImage = turgutImages.left2;
+      console.log("gauche2");
+      turgutX = turgutX - 3;
+    }
   }
+
+  if (directionActuelle == "bas") {
+    // alternance des images pour l'animation
+    if (counterWalk % 2 == 0) {
+      currentImage = turgutImages.down;
+      console.log("bas");
+      turgutY = turgutY + 3;
+    } else {
+      currentImage = turgutImages.down2;
+      console.log("bas2");
+      turgutY = turgutY + 3;
+    }
+  }
+
+  if (directionActuelle == "haut") {
+    // alternance des images pour l'animation
+    if (counterWalk % 2 == 0) {
+      currentImage = turgutImages.up;
+      console.log("haut");
+      turgutY = turgutY - 3;
+    } else {
+      currentImage = turgutImages.up2;
+      console.log("haut2");
+      turgutY = turgutY - 3;
+    }
+  }
+
+
+
 
   // Fonction de dessin
   function drawImage() {
@@ -130,10 +192,8 @@ function drawGame() {
   });
 
   // Fonction principale appelée dans la boucle
-  function gameLoop() {
-    updatePosition(); // Applique les mouvements
+  function gameLoop() { // Applique les mouvements
     drawImage(); // Dessine l'image
-
     requestAnimationFrame(gameLoop);
   }
 

@@ -8,7 +8,7 @@ const prohibitedColors = ["#3d34a5", "#aE6c37"];
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
-let fps = 60;
+let fps = 15;
 // Déplacement de Robin
 const body = document.querySelector("body");
 // redimensionnement du canvas
@@ -22,9 +22,9 @@ function draw() {
   // Fonction qui ont besoin d'être redessinées
   setInterval(function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawGame();
     joypad();
     AfficheLesAxesEtTouchesGP();
+    drawGame();
     //animationOfResponsiveJoystick();
 
   }, 1000 / fps);
