@@ -49,7 +49,6 @@ function drawGame() {
     turgutY += yAxis * turgutSpeed;
   }
 
-
   const gamepads = navigator.getGamepads();
   if (!gamepads[0]) return; // Vérifie si une manette est connectée
 
@@ -57,7 +56,7 @@ function drawGame() {
   const axe1 = gp.axes[0]; // Axe horizontal
   const axe2 = gp.axes[1]; // Axe vertical
   const axe3 = gp.axes[3]; // Axe horizontal droit
-  const axe4 = gp.axes[2]; // Axe vertical droit
+  const axe4 = gp.axes[2]; // Axe vertical droi
   const buttonA = gp.buttons[0].pressed;
   const buttonB = gp.buttons[1].pressed;
   const buttonX = gp.buttons[2].pressed;
@@ -75,7 +74,7 @@ function drawGame() {
   const buttonGauchePave = gp.buttons[14].pressed;
   const buttonDroitePave = gp.buttons[15].pressed;
 
-  // Afficher en console les boutons pressés et les directions >= 0.7 
+  // Afficher en console les boutons pressés et les directions >= 0.7
   let directionActuelle = "vide";
   // vérifier l'état des axes toutes les 100ms
 
@@ -95,8 +94,8 @@ function drawGame() {
       console.log("axe1 (droite) est activé");
       console.log("axe1", axe1);
       console.log("directionActuelle", directionActuelle);
-
-    } if (directionActuelle == "droite" && infoAxe1 < 0.1) {
+    }
+    if (directionActuelle == "droite" && infoAxe1 < 0.1) {
       console.log("axe1 (droite) est désactivé");
       console.log("axe1", axe1);
       console.log("directionActuelle", directionActuelle);
@@ -104,9 +103,6 @@ function drawGame() {
       directionActuelle = "vide";
     }
   }, 100);
-
-
-
 
   // Fonction de dessin
   function drawImage() {
@@ -133,6 +129,5 @@ function drawGame() {
     gameLoop();
   };
 }
-
 
 export default drawGame;
