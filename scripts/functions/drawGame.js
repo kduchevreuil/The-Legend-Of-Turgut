@@ -18,11 +18,9 @@ function drawGame() {
   mapImage.src = "./imageOfMap/map.png";
   // découpe de l'image de turgutComplete
 
-
-
-
-
   // Chargement des images de Turğut
+
+  //turgut image deplacement
 
   const turgutImages = {
     right: new Image(),
@@ -37,24 +35,28 @@ function drawGame() {
     rightStay: new Image(),
     leftStay: new Image(),
     upStay: new Image(),
-    downStay: new Image()
-
+    downStay: new Image(),
   };
-  turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_09.png";
-  turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
-  turgutImages.up.src = "../../ImagesOfTurgut/02.png";
+
+  //turgut image qui attaque
+
+  const turgutImagesAttaque = {
+    rightAtt: new Image(),
+    leftAtt: new Image(),
+    downAtt: new Image(),
+    upAtt: new Image(),
+  };
+
+  turgutImages.right.src = "../../ImagesOfTurgut/70.png";
+  turgutImages.left.src = "../../ImagesOfTurgut/11.png";
+  turgutImages.up.src = "../../ImagesOfTurgut/30.png";
   turgutImages.down.src = "../../ImagesOfTurgut/00.png";
-  turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
+  turgutImages.idle.src = "";
 
-  turgutImages.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
-  turgutImages.left2.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
-  turgutImages.up2.src = "../../ImagesOfTurgut/12.png";
+  turgutImages.right2.src = "../../ImagesOfTurgut/01.png";
+  turgutImages.left2.src = "../../ImagesOfTurgut/21.png";
+  turgutImages.up2.src = "../../ImagesOfTurgut/40.png";
   turgutImages.down2.src = "../../ImagesOfTurgut/10.png";
-
-
-  if (counterWalk > 2) {
-    counterWalk = 0;
-  };
 
   const gp = navigator.getGamepads()[0];
   const axe1 = gp.axes[0]; // Axe horizontal
@@ -81,7 +83,6 @@ function drawGame() {
   const gamepads = navigator.getGamepads();
   if (!gamepads[0]) return; // Vérifie si une manette est connecté
 
-
   // Afficher en console les boutons pressés et les directions >= 0.7
   let directionActuelle = "vide";
   // vérifier l'état des axes toutes les 100ms
@@ -105,7 +106,6 @@ function drawGame() {
     infoAxe3 = 0;
     infoAxe4 = 0;
     console.log("axe1 (droite) est activé");
-
   }
   if (infoAxe1 <= -0.3 && directionActuelle !== "gauche") {
     counterWalk++;
@@ -141,19 +141,12 @@ function drawGame() {
       currentImage = turgutImages.right;
       console.log("droite");
       mapImageX = mapImageX - 3;
-
-
-
     } else {
       currentImage = turgutImages.right2;
       console.log("droite2");
       mapImageX = mapImageX - 3;
-
-
-
     }
   }
-
   if (directionActuelle == "gauche") {
     // alternance des images pour l'animation
     if (counterWalk % 2 == 0) {
@@ -193,9 +186,6 @@ function drawGame() {
     }
   }
 
-
-
-
   // Fonction de dessin
   function drawImage() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -209,19 +199,17 @@ function drawGame() {
   });
 
   // Fonction principale appelée dans la boucle
-  function gameLoop() { // Applique les mouvements
+  function gameLoop() {
+    // Applique les mouvements
     drawImage(); // Dessine l'image
     requestAnimationFrame(gameLoop);
   }
   //Centrer Turğut à a la position du canvas
 
-
-
-
   // Démarrer la boucle du jeu une fois que l'image de la carte est chargée
   mapImage.onload = () => {
     gameLoop();
   };
-};
+}
 
 export default drawGame;
