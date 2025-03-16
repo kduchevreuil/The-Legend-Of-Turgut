@@ -3,6 +3,7 @@ import responsiveCanvas from "./functions/responsiveCanvas.js";
 import drawGame from "./functions/drawGame.js";
 import animationOfResponsiveJoystick from "./functions/animationOfResponsiveJoystick.js";
 import AfficheLesAxesEtTouchesGP from "./functions/AfficheLesAxesEtTouchesGP.js";
+import AffichageEcranTitre from "./functions/affichageEcranTitre.js";
 
 const prohibitedColors = ["#3d34a5", "#aE6c37"];
 const canvas = document.querySelector("#canvas");
@@ -16,12 +17,14 @@ window.addEventListener("resize", draw);
 // Fonction d'affichage du jeu
 function draw() {
   // Fonction qui n'ont pas besoin d'être redessinées
+
   responsiveCanvas();
   animationOfResponsiveJoystick();
   //responsiveJoystick();
+  AffichageEcranTitre();
   // Fonction qui ont besoin d'être redessinées
   setInterval(function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     joypad();
     AfficheLesAxesEtTouchesGP();
     drawGame();

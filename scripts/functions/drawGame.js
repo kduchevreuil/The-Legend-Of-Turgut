@@ -4,7 +4,9 @@ const turgutWidth = 16;
 const turgutHeight = 16;
 let counterWalk = 0;
 let currentImage;
-
+// position de mapImage
+let mapImageX = 0;
+let mapImageY = 0;
 function drawGame() {
   // Configuration du canvas
   const canvas = document.getElementById("canvas");
@@ -14,6 +16,7 @@ function drawGame() {
   // Chargement des images
   const mapImage = new Image();
   mapImage.src = "./imageOfMap/map.png";
+
   const turgutImages = {
     right: new Image(),
     left: new Image(),
@@ -95,6 +98,7 @@ function drawGame() {
     infoAxe3 = 0;
     infoAxe4 = 0;
     console.log("axe1 (droite) est activé");
+
   }
   if (infoAxe1 <= -0.3 && directionActuelle !== "gauche") {
     counterWalk++;
@@ -130,10 +134,13 @@ function drawGame() {
       currentImage = turgutImages.right;
       console.log("droite");
       turgutX = turgutX + 3;
+
     } else {
       currentImage = turgutImages.right2;
       console.log("droite2");
       turgutX = turgutX + 3;
+
+
     }
   }
 
@@ -182,7 +189,7 @@ function drawGame() {
   // Fonction de dessin
   function drawImage() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(mapImage, 0, 0, mapImage.width, mapImage.height);
+    ctx.drawImage(mapImage, mapImageX, mapImageY, mapImage.width, mapImage.height);
     ctx.drawImage(currentImage, turgutX, turgutY, turgutWidth, turgutHeight);
   }
 
@@ -196,11 +203,15 @@ function drawGame() {
     drawImage(); // Dessine l'image
     requestAnimationFrame(gameLoop);
   }
+  //Centrer Turğut à a la position du canvas
+
+
+
 
   // Démarrer la boucle du jeu une fois que l'image de la carte est chargée
   mapImage.onload = () => {
     gameLoop();
   };
-}
+};
 
 export default drawGame;
