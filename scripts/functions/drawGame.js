@@ -1,12 +1,12 @@
-let turgutX = 120;
-let turgutY = 110;
+let turgutX = 112;
+let turgutY = 108;
 const turgutWidth = 16;
 const turgutHeight = 16;
 let counterWalk = 0;
 let currentImage;
 // position de mapImage
-let mapImageX = 0;
-let mapImageY = 0;
+let mapImageX = -360;
+let mapImageY = -220;
 function drawGame() {
   // Configuration du canvas
   const canvas = document.getElementById("canvas");
@@ -42,14 +42,14 @@ function drawGame() {
   };
   turgutImages.right.src = "../../ImagesOfTurgut/Layer 1_sprite_09.png";
   turgutImages.left.src = "../../ImagesOfTurgut/Layer 1_sprite_11.png";
-  turgutImages.up.src = "../../ImagesOfTurgut/Layer 1_sprite_05.png";
-  turgutImages.down.src = "../../ImagesOfTurgut/Layer 1_sprite_14.png";
+  turgutImages.up.src = "../../ImagesOfTurgut/02.png";
+  turgutImages.down.src = "../../ImagesOfTurgut/00.png";
   turgutImages.idle.src = "../../ImagesOfTurgut/Layer 1_sprite_02.png";
 
   turgutImages.right2.src = "../../ImagesOfTurgut/Layer 1_sprite_08.png";
   turgutImages.left2.src = "../../ImagesOfTurgut/Layer 1_sprite_10.png";
-  turgutImages.up2.src = "../../ImagesOfTurgut/Layer 1_sprite_06.png";
-  turgutImages.down2.src = "../../ImagesOfTurgut/Layer 1_sprite_16.png";
+  turgutImages.up2.src = "../../ImagesOfTurgut/12.png";
+  turgutImages.down2.src = "../../ImagesOfTurgut/10.png";
 
 
   if (counterWalk > 2) {

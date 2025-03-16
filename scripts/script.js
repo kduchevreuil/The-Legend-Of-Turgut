@@ -6,6 +6,7 @@ import AfficheLesAxesEtTouchesGP from "./functions/AfficheLesAxesEtTouchesGP.js"
 import AffichageEcranTitre from "./functions/affichageEcranTitre.js";
 import responsiveJoystick from "./functions/responsiveJoystick.js";
 import cameraOnTurgut from "./functions/cameraOnTurgut.js";
+import checkColorCollision from "./functions/checkColorCollision.js";
 
 const prohibitedColors = ["#3d34a5", "#aE6c37"];
 const canvas = document.querySelector("#canvas");
@@ -32,6 +33,7 @@ function draw() {
     joypad();
     AfficheLesAxesEtTouchesGP();
     drawGame();
+    checkColorCollision();
     //animationOfResponsiveJoystick();
 
   }, 1000 / fps);
