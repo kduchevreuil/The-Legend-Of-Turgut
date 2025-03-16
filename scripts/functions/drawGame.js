@@ -16,6 +16,13 @@ function drawGame() {
   // Chargement des images
   const mapImage = new Image();
   mapImage.src = "./imageOfMap/map.png";
+  // découpe de l'image de turgutComplete
+
+
+
+
+
+  // Chargement des images de Turğut
 
   const turgutImages = {
     right: new Image(),
@@ -133,12 +140,15 @@ function drawGame() {
     if (counterWalk % 2 == 0) {
       currentImage = turgutImages.right;
       console.log("droite");
-      turgutX = turgutX + 3;
+      mapImageX = mapImageX - 3;
+
+
 
     } else {
       currentImage = turgutImages.right2;
       console.log("droite2");
-      turgutX = turgutX + 3;
+      mapImageX = mapImageX - 3;
+
 
 
     }
@@ -149,11 +159,11 @@ function drawGame() {
     if (counterWalk % 2 == 0) {
       currentImage = turgutImages.left;
       console.log("gauche");
-      turgutX = turgutX - 3;
+      mapImageX = mapImageX + 3;
     } else {
       currentImage = turgutImages.left2;
       console.log("gauche2");
-      turgutX = turgutX - 3;
+      mapImageX = mapImageX + 3;
     }
   }
 
@@ -162,11 +172,11 @@ function drawGame() {
     if (counterWalk % 2 == 0) {
       currentImage = turgutImages.down;
       console.log("bas");
-      turgutY = turgutY + 3;
+      mapImageY = mapImageY - 3;
     } else {
       currentImage = turgutImages.down2;
       console.log("bas2");
-      turgutY = turgutY + 3;
+      mapImageY = mapImageY - 3;
     }
   }
 
@@ -175,11 +185,11 @@ function drawGame() {
     if (counterWalk % 2 == 0) {
       currentImage = turgutImages.up;
       console.log("haut");
-      turgutY = turgutY - 3;
+      mapImageY = mapImageY + 3;
     } else {
       currentImage = turgutImages.up2;
       console.log("haut2");
-      turgutY = turgutY - 3;
+      mapImageY = mapImageY + 3;
     }
   }
 
