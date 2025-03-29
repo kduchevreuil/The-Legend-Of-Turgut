@@ -5,7 +5,6 @@
 "The Legend of Turgut" est un jeu développé en 🗡️ HTML, 🏹 CSS et 🪓 JavaScript, sans framework ni canvas. Comme un site web classique, il repose entièrement sur le DOM !
 
 Passionné de programmation, j’ai voulu partager avec vous ce projet ludique, qui me permet de coder régulièrement. Après avoir expérimenté avec Phaser.js, Pygame et Unity, j’ai choisi de revenir à une version en pur JavaScript, un langage universel et directement accessible via le navigateur. Mes enfants ont grandement contribué à la conception des graphismes et des animations. Ils ont aussi participé à l’élaboration de l’histoire et des personnages. Initiés très tôt à la programmation, ils ont pu m’aider à développer et tester le jeu.
-<br>
 
 ### LE JEU
 
@@ -13,14 +12,14 @@ Passionné de programmation, j’ai voulu partager avec vous ce projet ludique, 
 
 A voir ici : [Découvrez-le ici : THE LEGEND OF TURGUT](https://kduchevreuil.github.io/The-Legend-Of-Turgut/)
 
-[![Image](./imagesOfReadme/turgutPapercraft.jpg)](https://kduchevreuil.github.io/The-Legend-Of-Robin/)
+[![Image](./imagesOfReadme/imageTitre.jpg)](https://kduchevreuil.github.io/The-Legend-Of-Robin/)
 
 </p>
 <p align="center">
-    ⬆️---------------⬆️
+    ⬆️---Cliquer sur le lien ou l'image !----⬆️
 </p>
 
-### Qui est Robin ?
+### Qui est Turgut ?
 
 Turgut est un héros fictif originaire d’Anatolie, à l’époque où les peuples turcs vivaient encore en nomades. L’idée d’un jeu d’aventure s’est imposée naturellement : la Turquie, riche en histoire, est un cadre idéal pour un RPG.
 
@@ -38,7 +37,7 @@ J’ai opté pour un style pixel-art, inspiré du rétro-gaming, afin de me conc
             src="./imagesOfReadme/equipe.jpg"
             alt="Photo de l'équipe de travail"
             aria-label="Photo de l'équipe de travail"
-            width= 90%
+            width= 80%
         />
 </p>
 
@@ -53,9 +52,9 @@ Ce jeu est avant tout un projet personnel et familial. Mes enfants m’ont aidé
 <img 
             class="IMGlink"
             src="./imagesOfReadme/ancienPython.jpg"
-            alt="Photo de l'équipe de travail"
-            aria-label="Photo de l'équipe de travail"
-            width= 90%
+            alt="screenshot du jeu en python"
+            aria-label="screenshot du jeu en python"
+            width= 80%
         />
 </p>
 
@@ -65,10 +64,10 @@ Côté technique, ce jeu me permet de perfectionner mes compétences en JavaScri
 <br>
 <img 
             class="IMGlink"
-            src="./imagesOfReadme/turgutCheval.gif"
-            alt="Photo de l'équipe de travail"
-            aria-label="Photo de l'équipe de travail"
-            width= 90%
+            src="./imagesOfReadme/turgutPapercraft.jpg"
+            alt="image de Turgut en Papercraft"
+            aria-label="image de Turgut en Papercraft"
+            width= 80%
         />
 </p>
 
