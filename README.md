@@ -2,16 +2,16 @@
 
 ### Présentation
 
-"The Legend of Turgut" est un jeu coder en 🗡️ HTML 🏹 CSS 🪓 JAVASCRIPT sans framework et sans utiliser canvas. Comme un site internet, on a utilisé seulement le DOM !
+"The Legend of Turgut" est un jeu développé en 🗡️ HTML, 🏹 CSS et 🪓 JavaScript, sans framework ni canvas. Comme un site web classique, il repose entièrement sur le DOM !
 
-Passionné de programmation, je partage avec vous ce projet ludique. Un projet jeu qui me permet de coder régulièrement. J'ai utilisé auparavant Phaser.js, Pygame et Unity mais je suis revenu a une version en JavaScript qui est le language utilisé dans le navigateur et donc accéssible à tous. Mes enfants m'ont aidé à créer les graphismes et les animations. Ils ont aussi participé à la création de l'histoire et des personnages et ils codent depuis leur plus jeune âge. Ils ont donc pu m'aider à créer ce jeu et à le tester.
+Passionné de programmation, j’ai voulu partager avec vous ce projet ludique, qui me permet de coder régulièrement. Après avoir expérimenté avec Phaser.js, Pygame et Unity, j’ai choisi de revenir à une version en pur JavaScript, un langage universel et directement accessible via le navigateur. Mes enfants ont grandement contribué à la conception des graphismes et des animations. Ils ont aussi participé à l’élaboration de l’histoire et des personnages. Initiés très tôt à la programmation, ils ont pu m’aider à développer et tester le jeu.
 <br>
 
 ### LE JEU
 
 <p align="center">
 
-A voir ici : [THE LEGEND OF TURGUT](https://kduchevreuil.github.io/The-Legend-Of-Turgut/)
+A voir ici : [Découvrez-le ici : THE LEGEND OF TURGUT](https://kduchevreuil.github.io/The-Legend-Of-Turgut/)
 
 [![Image](./imagesOfReadme/turgutPapercraft.jpg)](https://kduchevreuil.github.io/The-Legend-Of-Robin/)
 
@@ -22,9 +22,11 @@ A voir ici : [THE LEGEND OF TURGUT](https://kduchevreuil.github.io/The-Legend-Of
 
 ### Qui est Robin ?
 
-Turgut est un personnage fictif d'anatolie, à l'époque où les peuples turcs vivaient encore comme des nomades. L'idée d'en faire un jeu d'aventure est simple : La Turquie est un pays chargé d'histoire, le meilleur endroit pour un RPG (jeu d'aventure). Le choix des graphismes en pixel, qui rappel le retro gaming est la pour me faciliter la tache et me focaliser sur le code.
+Turgut est un héros fictif originaire d’Anatolie, à l’époque où les peuples turcs vivaient encore en nomades. L’idée d’un jeu d’aventure s’est imposée naturellement : la Turquie, riche en histoire, est un cadre idéal pour un RPG.
 
-J'ai réalisé le personnage Turgut grace au logiciel PISKEL. En me référant à link dans le jeu The Legend of Zelda Une des grande référence du retro-gaming dans les jeux d'aventure. A l'époque, ce jeu se jouait avec une manette à deux boutons seulement. Actuellement nous en avons beaucoup plus et je vais devoir trouver des fonctionnalités supplémentaires. Le jeu était aussi pauvre en interaction... Pas mal de travail à fournir mais pas mal de plaisir à prendre aussi ! Surtout quand on aime le code !
+J’ai opté pour un style pixel-art, inspiré du rétro-gaming, afin de me concentrer sur le développement tout en rendant hommage aux classiques du genre. Le personnage de Turgut a été conçu avec PISKEL, en m’inspirant de Link dans The Legend of Zelda, une référence incontournable des jeux d’aventure.
+
+À l’époque, Zelda se jouait avec une manette à seulement deux boutons. Aujourd’hui, nous disposons de bien plus de possibilités, ce qui m’amène à intégrer de nouvelles mécaniques et fonctionnalités. Le défi est de rendre le jeu plus interactif, mais c’est aussi ce qui le rend passionnant à développer !
 <br>
 
 ### L'équipe de travail
@@ -42,7 +44,8 @@ J'ai réalisé le personnage Turgut grace au logiciel PISKEL. En me référant �
 
 ### D'où vient ce projet ?
 
-Ce jeu est un projet personnel et famillial car j'ai été aidé par mes enfants pour les graphismes, les peripeties et le nom du personnage principale. En plus des nombreux dessins, papercraft et autres activités manuelles, j'ai voulu leur faire découvrir le code et le développement web qu'ils comprennent mieux maintenant.
+Ce jeu est avant tout un projet personnel et familial. Mes enfants m’ont aidé à concevoir les graphismes, les événements du jeu et même le nom du personnage principal. En complément de nos activités créatives comme le dessin ou le papercraft, j’ai souhaité leur faire découvrir le codage et le développement web, un univers qu’ils comprennent désormais mieux.
+
 <br>
 
 <p align="center">
@@ -56,7 +59,18 @@ Ce jeu est un projet personnel et famillial car j'ai été aidé par mes enfants
         />
 </p>
 
-En dehors de l'aspect ludique, ce projet me permet de mettre en pratique mes connaissances en JavaScript et de me perfectionner dans ce langage. Il y a eu beaucoup de changement et de version mais à chaque fois j'essaie d'améliorer le code et la qualité du jeu.
+Côté technique, ce jeu me permet de perfectionner mes compétences en JavaScript. Malgré les nombreuses versions et améliorations successives, l’objectif reste le même : optimiser le code et enrichir l’expérience de jeu.
+
+<p align="center">
+<br>
+<img 
+            class="IMGlink"
+            src="./imagesOfReadme/turgutCheval.gif"
+            alt="Photo de l'équipe de travail"
+            aria-label="Photo de l'équipe de travail"
+            width= 90%
+        />
+</p>
 
 ### Mes réseaux sociaux
 
