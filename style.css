@@ -66,8 +66,10 @@ body {
   width: 16px;
   height: 16px;
   position: absolute;
-  top: -126px;
-  left: 110px;
+  /*top: -126px;
+  left: 110px;*/
+  top: 0px;
+  left: 50px;
   opacity: 1;
   z-index: 10;
   position: absolute;

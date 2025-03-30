@@ -9,9 +9,9 @@ function musicPlayTitleScreen() {
     const startGame = () => {
         const titleScreen = document.getElementById('titleScreen');
         const HistoryScreen = document.getElementById('HistoryScreen');
+        const Turgut = document.getElementById('turgut');
         if (titleScreen) {
             const titreClignote = document.getElementById('titreClignote');
-            titreClignote.style.scale = '1.2';
             titreClignote.style.color = "yellow";
             audio2.play(); // Jouer le son de démarrage
             // Jouer l'audio et gérer les erreurs éventuelles
@@ -31,7 +31,17 @@ function musicPlayTitleScreen() {
                     if (i >= 1) {
                         titleScreen.style.zIndex = "-5"; // Masquer l'écran titre
                         titleScreen.style.opacity = "0"; // Réinitialiser l'opacité pour la prochaine fois
-                        HistoryScreen.style.opacity = "0"; // Réinitialiser l'opacité pour la prochaine fois
+                        Turgut.style.opacity = "1"; // Assurez-vous que Turgut est visible
+                        Turgut.style.zIndex = "10"; // Assurez-vous que Turgut est au premier plan
+                        // HistoryScreen reste encore visible 3 secondes
+                        HistoryScreen.style.opacity = "0"; // Assurez-vous que l'écran d'histoire est visible
+                        setTimeout(() => {
+                            HistoryScreen.style.opacity = "0"; // Réinitialiser l'opacité pour la prochaine fois
+                            HistoryScreen.style.zIndex = "-5"; // Masquer l'écran d'histoire
+                            Turgut.style.opacity = "1"; // Assurez-vous que Turgut est visible
+                            Turgut.style.zIndex = "10"; // Assurez-vous que Turgut est au premier plan
+                        }, 3000); // Attendre 3 secondes avant de masquer l'écran d'histoire
+
                     }
                 }, 50); // Ajuster la vitesse de fondu
 
@@ -43,6 +53,8 @@ function musicPlayTitleScreen() {
         window.removeEventListener('gamepadconnected', handleGamepad);
         if (gamepadInterval) {
             clearInterval(gamepadInterval);
+            Turgut.style.opacity = "1"; // Assurez-vous que Turgut est visible
+            Turgut.style.zIndex = "10"; // Assurez-vous que Turgut est au premier plan
         }
 
         // Lancer le jeu ici (ex: appeler une fonction spécifique)
