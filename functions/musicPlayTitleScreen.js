@@ -8,6 +8,7 @@ function musicPlayTitleScreen() {
     // Fonction pour démarrer le jeu
     const startGame = () => {
         const titleScreen = document.getElementById('titleScreen');
+        const HistoryScreen = document.getElementById('HistoryScreen');
         if (titleScreen) {
             const titreClignote = document.getElementById('titreClignote');
             titreClignote.style.scale = '1.2';
@@ -22,6 +23,7 @@ function musicPlayTitleScreen() {
                         // arreter la fonction TitleScreenClignote
                         titreClignote.style.scale = '1';
                         titleScreen.style.opacity = `${1 - i}`;
+                        HistoryScreen.style.opacity = `${0 + i}`; // Appliquer l'opacité à l'écran d'histoire
                         i += 0.01; // Ajuster la vitesse de fondu
                     } else {
                         clearInterval(fadeOut);
@@ -29,6 +31,7 @@ function musicPlayTitleScreen() {
                     if (i >= 1) {
                         titleScreen.style.zIndex = "-5"; // Masquer l'écran titre
                         titleScreen.style.opacity = "0"; // Réinitialiser l'opacité pour la prochaine fois
+                        HistoryScreen.style.opacity = "0"; // Réinitialiser l'opacité pour la prochaine fois
                     }
                 }, 50); // Ajuster la vitesse de fondu
 

@@ -8,7 +8,7 @@
 /* installation de la font en local */
 @font-face {
   font-family: "retroFont";
-  src: url("font/retro.ttf") format("truetype");
+  src: url("font/retro.otf") format("opentype");
 }
 /* BODY */
 body {
@@ -42,21 +42,22 @@ body {
   padding-top: 60px;
   padding-left: 5px;
   color: #45a4b4;
-  font-size: 25px;
-  position: relative;
+  font-size: 20px;
+  position: absolute;
 }
 #titreFixe2 {
-  padding-left: 52px;
+  padding-left: 28px;
   color: #0c6a96;
   font-size: 40px;
-  position: relative;
-  top: -16px;
+  position: absolute;
+  top: 75px;
 }
 #titreClignote {
   color: #ffffff;
   font-size: 8px;
-  margin: 35px;
-  position: relative;
+  position: absolute;
+  top: 140px;
+  left: 18px;
 }
 
 /* JOUEUR DU JEU AU MILIEU DE L ECRAN */
@@ -64,18 +65,23 @@ body {
   background-image: url("./ImagesOfTurgut/AllImages.png");
   width: 16px;
   height: 16px;
-  position: relative;
+  position: absolute;
   top: -126px;
   left: 110px;
   opacity: 1;
-  z-index: -1;
-  position: relative;
+  z-index: 10;
+  position: absolute;
 }
 
 /* HISTOIRE INTRO */
 #HistoryScreen {
-  position: relative;
+  position: absolute;
   opacity: 1;
+  top: 0;
+  padding: 20px;
+  font-size: 10px;
+  text-align: center;
+  opacity: 0;
 }
 /* AFFICHAGE DE LA MANETTE */
 #halfJoystick {
