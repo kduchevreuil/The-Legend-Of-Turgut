@@ -43,6 +43,7 @@ body {
   padding-left: 5px;
   color: #45a4b4;
   font-size: 25px;
+  position: relative;
 }
 #titreFixe2 {
   padding-left: 52px;
@@ -55,6 +56,7 @@ body {
   color: #ffffff;
   font-size: 8px;
   margin: 35px;
+  position: relative;
 }
 
 /* JOUEUR DU JEU AU MILIEU DE L ECRAN */
@@ -67,6 +69,13 @@ body {
   left: 110px;
   opacity: 1;
   z-index: -1;
+  position: relative;
+}
+
+/* HISTOIRE INTRO */
+#HistoryScreen {
+  position: relative;
+  opacity: 1;
 }
 /* AFFICHAGE DE LA MANETTE */
 #halfJoystick {

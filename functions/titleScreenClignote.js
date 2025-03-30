@@ -1,4 +1,4 @@
-function TitleScreenClignote() {
+function titleScreenClignote() {
     const titreClignote = document.querySelector("#titreClignote");
     let isVisible = true;
     // Stocker le texte original pour le réutiliser
@@ -31,4 +31,4 @@ function TitleScreenClignote() {
 
 }
 
-export default TitleScreenClignote;
+export default titleScreenClignote;
