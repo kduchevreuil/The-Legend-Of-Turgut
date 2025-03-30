@@ -13,7 +13,7 @@
 /* BODY */
 body {
   font-family: "retroFont";
-  background-color: #585858;
+  background-color: #000;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -37,7 +37,6 @@ body {
   background-size: contain;
   text-shadow: 0 0 5px#ffffff;
   opacity: 1;
-  z-index: 1;
 }
 #titreFixe {
   padding-top: 60px;
@@ -68,4 +67,120 @@ body {
   left: 110px;
   opacity: 1;
   z-index: -1;
+}
+/* AFFICHAGE DE LA MANETTE */
+#halfJoystick {
+  height: 100%;
+  width: 300px;
+}
+.leftJoystick {
+  width: 150px;
+  height: 455px;
+  background-color: #000000;
+  margin: auto;
+  padding: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#crossOfHalfJoystick {
+  width: 135px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: 0px 0px;
+  margin-left: 82.5px;
+  margin-right: 82.5px;
+  margin-top: 125px;
+  margin-bottom: 125px;
+  transform: scale(1.2);
+}
+#directionOfCross {
+  width: 36px;
+  height: 36px;
+  background-color: #949494;
+  border-radius: 35px;
+  position: absolute;
+  top: 46px;
+  left: 46px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.rightJoystick {
+  width: 150px;
+  height: 455px;
+  background-color: #000000;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#buttonAOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: -262px 0px;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding: 0;
+}
+#buttonBOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: -370px 130px;
+  margin-left: 10px;
+  padding: 0;
+}
+#buttonXOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: -510px 130px;
+  margin-right: 10px;
+  padding: 0;
+}
+#buttonYOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: -645px 130px;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding: 0;
+}
+
+.LTLBButton {
+  width: 337px;
+  height: 300px;
+}
+.LBButton {
+  width: 230px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: 0px -130px;
+  margin-left: 70px;
+}
+.LTButton {
+  width: 127px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: -650px -130px;
+  margin-left: 180px;
+  margin-top: -5px;
+}
+
+.RTRBButton {
+  width: 337px;
+  height: 300px;
+}
+.RTButton {
+  width: 127px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: -810px 0px;
+}
+.RBButton {
+  width: 230px;
+  height: 130px;
+  background-image: url("../imagesOfJoystick/97324.png");
+  background-position: 0px 130px;
 }
