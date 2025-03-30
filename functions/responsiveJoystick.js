@@ -1,19 +1,25 @@
 function responsiveJoystick() {
-    let largeurEcran = window.innerWidth; // Obtient la largeur de l'écran du navigateur
-    let longueurEcran = window.innerHeight;
-    let halfJoystick = document.querySelectorAll('#halfJoystick');
-    let allScreen = document.querySelector("#allScreen");
-    if (largeurEcran < 1650 || longueurEcran < 695) {
-        halfJoystick[0].style.display = 'none';
-        halfJoystick[1].style.display = 'none';
-    } else {
-        halfJoystick[0].style.display = 'flex';
-        halfJoystick[1].style.display = 'flex';
+    const body = document.querySelector('body');
+    const screenWidth = body.clientWidth;
+    const screenHeight = body.clientHeight;
+    const halfJoysticks = document.querySelectorAll('#halfJoystick'); // Changé pour une classe 
 
+    // Vérification 
+    const shouldHideJoysticks = screenWidth < 1555 || screenHeight < 695;
+    if (shouldHideJoysticks) {
+        halfJoysticks.forEach(joystick => {
+            joystick.style.display = 'none';
+        });
     }
-}
-export default responsiveJoystick;
+    else {
+        halfJoysticks.forEach(joystick => {
+            joystick.style.display = 'flex';
+        });
+    }
 
+}
+
+export default responsiveJoystick;
 
 
 

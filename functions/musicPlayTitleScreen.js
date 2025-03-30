@@ -1,6 +1,9 @@
+
+import TitleScreenClignote from './TitleScreenClignote.js';
 function musicPlayTitleScreen() {
     const audio = new Audio('./sounds/START.wav');
     audio.loop = false;
+    const audio2 = new Audio('./sounds/STARTPIXEL.wav');
 
     let gamepadInterval = null;
 
@@ -8,13 +11,29 @@ function musicPlayTitleScreen() {
     const startGame = () => {
         const titleScreen = document.getElementById('titleScreen');
         if (titleScreen) {
-            titleScreen.style.opacity = '0'; // Masquer l'écran titre
-
+            const titreClignote = document.getElementById('titreClignote');
+            titreClignote.style.scale = '1.2';
+            titreClignote.style.color = "yellow";
+            audio2.play(); // Jouer le son de démarrage
             // Jouer l'audio et gérer les erreurs éventuelles
             audio.play().catch(error => console.error("Erreur de lecture audio:", error));
-
             setTimeout(() => {
-                titleScreen.display.opacity = 0; // Supprimer l'écran titre après 500ms
+                let i = 0;
+                const fadeOut = setInterval(() => {
+                    if (i < 1) {
+                        // arreter la fonction TitleScreenClignote
+                        titreClignote.style.scale = '1';
+                        titleScreen.style.opacity = `${1 - i}`;
+                        i += 0.01; // Ajuster la vitesse de fondu
+                    } else {
+                        clearInterval(fadeOut);
+                    }
+                    if (i >= 1) {
+                        titleScreen.style.zIndex = "-5"; // Masquer l'écran titre
+                        titleScreen.style.opacity = "0"; // Réinitialiser l'opacité pour la prochaine fois
+                    }
+                }, 50); // Ajuster la vitesse de fondu
+
             }, 500);
         }
 
