@@ -1,4 +1,6 @@
-## ⚔️ The Legend Of Turgut ⚔️
+# ⚔️ The Legend Of Turgut ⚔️
+
+## Le jeu d'aventure en pixel-art
 
 ### Présentation
 
