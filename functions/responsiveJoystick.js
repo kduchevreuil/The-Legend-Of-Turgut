@@ -5,7 +5,7 @@ function responsiveJoystick() {
     const halfJoysticks = document.querySelectorAll('#halfJoystick'); // Changé pour une classe 
 
     // Vérification 
-    const shouldHideJoysticks = screenWidth < 1555 || screenHeight < 695;
+    const shouldHideJoysticks = screenWidth < 1555 || screenHeight < 730;
     if (shouldHideJoysticks) {
         halfJoysticks.forEach(joystick => {
             joystick.style.display = 'none';

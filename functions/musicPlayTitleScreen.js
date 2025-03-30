@@ -1,5 +1,3 @@
-
-import TitleScreenClignote from './TitleScreenClignote.js';
 function musicPlayTitleScreen() {
     const audio = new Audio('./sounds/START.wav');
     audio.loop = false;
