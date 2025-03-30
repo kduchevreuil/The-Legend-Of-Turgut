@@ -1,6 +1,71 @@
-body {
-  background-color: aqua;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
 }
-button {
-  background-color: red;
+
+/* installation de la font en local */
+@font-face {
+  font-family: "retroFont";
+  src: url("font/retro.ttf") format("truetype");
+}
+/* BODY */
+body {
+  font-family: "retroFont";
+  background-color: #585858;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+/* SCREENGAME représente l'ensemble du l'écran du jeu qui contient tout les éléments*/
+#screenGame {
+  height: 240px;
+  width: 240px;
+  background-color: #000000;
+  border: 2px solid #c4c3c3;
+  margin: auto;
+}
+/* TitleScreen représente l'écran titre du jeu, il est composé de 3 titres*/
+#titleScreen {
+  background-image: url("./ImagesTitleScreen/pixelTitleScreen3.png");
+  width: 236px;
+  height: 236px;
+  background-size: contain;
+  text-shadow: 0 0 5px#ffffff;
+  opacity: 1;
+  z-index: 1;
+}
+#titreFixe {
+  padding-top: 60px;
+  padding-left: 5px;
+  color: #45a4b4;
+  font-size: 25px;
+}
+#titreFixe2 {
+  padding-left: 50px;
+  color: #0c6a96;
+  font-size: 40px;
+  position: relative;
+  top: -20px;
+}
+#titreClignote {
+  color: #ffffff;
+  font-size: 8px;
+  margin: 35px;
+}
+
+/* JOUEUR DU JEU AU MILIEU DE L ECRAN */
+#Turgut {
+  background-image: url("./ImagesOfTurgut/AllImages.png");
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: -126px;
+  left: 110px;
+  opacity: 1;
+  z-index: -1;
 }
