@@ -1,5 +1,5 @@
 import responsiveScreenGame from "./functions/responsiveScreenGame.js";
-import titleScreenClignote from "./functions/TitleScreenClignote.js";
+import titleScreenClignote from "./functions/titleScreenClignote.js";
 import musicPlayTitleScreen from "./functions/musicPlayTitleScreen.js";
 import animationOfResponsiveJoystick from "./functions/animationOfResponsiveJoystick.js";
 import responsiveJoystick from "./functions/responsiveJoystick.js";
