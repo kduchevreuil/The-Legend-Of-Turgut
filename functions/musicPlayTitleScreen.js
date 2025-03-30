@@ -7,7 +7,7 @@ function musicPlayTitleScreen() {
 
     window.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
-            audio.play(); // Joue le son lorsque la touche "Entrée" ou "Espace" est pressée
+            audio.play();
             titleScreen.style.opacity = '0'; // Fait disparaître l'écran titre
         }
     });
