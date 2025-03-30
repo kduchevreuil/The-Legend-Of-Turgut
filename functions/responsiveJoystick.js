@@ -16,6 +16,18 @@ function responsiveJoystick() {
             joystick.style.display = 'flex';
         });
     }
+    // vérifier si l'utilisateur est sur mobile
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        halfJoysticks.forEach(joystick => {
+            joystick.style.display = 'none';
+        });
+    }
+    else {
+        halfJoysticks.forEach(joystick => {
+            joystick.style.display = 'flex';
+        });
+    }
 
 }
 
