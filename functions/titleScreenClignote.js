@@ -1,9 +1,6 @@
 function TitleScreenClignote() {
     const titreClignote = document.querySelector("#titreClignote");
     let isVisible = true;
-
-
-
     // Stocker le texte original pour le réutiliser
     const originalText = titreClignote.textContent || "appuyer sur 'START' ou 'ENTRER'";
 

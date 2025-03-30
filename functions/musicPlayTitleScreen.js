@@ -1,50 +1,61 @@
 function musicPlayTitleScreen() {
-    const titleScreen = document.getElementById('titleScreen');
-    const audio = document.createElement('audio');
-    audio.src = './sounds/START.wav'; // Chemin vers le fichier audio 
-    console.log(titleScreen.style);
-    audio.loop = false; // Mettre la musique en boucle
-    const Turgut = document.getElementById('Turgut');
+    const audio = new Audio('./sounds/START.wav');
+    audio.loop = false;
 
-    if (titleScreen.innerHTML) {
-        window.addEventListener("gamepadconnected", (e) => {
-            console.log(
-                "Gamepad connected at index %d: %s. %d buttons, %d axes.",
-                e.gamepad.index,
-                e.gamepad.id,
-                e.gamepad.buttons.length,
-                e.gamepad.axes.length
-            );
-            setInterval(() => {
-                let gp = navigator.getGamepads()[0];
-                if (gp.buttons[9].pressed == true) {
-                    audio.play();
-                    const titleScreen = document.getElementById('titleScreen');
-                    if (titleScreen) {
-                        titleScreen.parentNode.removeChild(titleScreen);
-                    }
+    let gamepadInterval = null;
 
+    // Fonction pour démarrer le jeu
+    const startGame = () => {
+        const titleScreen = document.getElementById('titleScreen');
+        if (titleScreen) {
+            titleScreen.style.opacity = '0'; // Masquer l'écran titre
 
-                }
+            // Jouer l'audio et gérer les erreurs éventuelles
+            audio.play().catch(error => console.error("Erreur de lecture audio:", error));
 
-            }, 100); // Vérifie l'état du gamepad toutes les 100ms
+            setTimeout(() => {
+                titleScreen.display.opacity = 0; // Supprimer l'écran titre après 500ms
+            }, 500);
+        }
 
-            window.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter') {
-                    audio.play();
-                    // supprimer l'élément titleScreen
-                    const titleScreen = document.getElementById('titleScreen');
-                    if (titleScreen) {
-                        titleScreen.parentNode.removeChild(titleScreen);
-                    }
+        // Nettoyer les événements
+        window.removeEventListener('keydown', handleKeyDown);
+        window.removeEventListener('gamepadconnected', handleGamepad);
+        if (gamepadInterval) {
+            clearInterval(gamepadInterval);
+        }
 
+        // Lancer le jeu ici (ex: appeler une fonction spécifique)
+        console.log("Le jeu démarre !");
+    };
 
-                }
-            });
-        });
-    }
+    // Gestion du clavier
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            startGame();
+        }
+    };
+
+    // Gestion du gamepad
+    const handleGamepad = () => {
+        const gp = navigator.getGamepads()[0];
+        if (gp?.buttons[9]?.pressed) {
+            startGame();
+        }
+    };
+
+    window.addEventListener("gamepadconnected", (e) => {
+        console.log(
+            `Gamepad connecté : ${e.gamepad.id} (${e.gamepad.buttons.length} boutons, ${e.gamepad.axes.length} axes)`
+        );
+
+        if (!gamepadInterval) {
+            gamepadInterval = setInterval(handleGamepad, 100);
+        }
+    });
+
+    // Ajout de la gestion du clavier
+    window.addEventListener('keydown', handleKeyDown);
 }
 
 export default musicPlayTitleScreen;
-
-
