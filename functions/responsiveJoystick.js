@@ -23,11 +23,7 @@ function responsiveJoystick() {
             joystick.style.display = 'none';
         });
     }
-    else {
-        halfJoysticks.forEach(joystick => {
-            joystick.style.display = 'flex';
-        });
-    }
+
 
 }
 
