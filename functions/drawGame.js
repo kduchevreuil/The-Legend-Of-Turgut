@@ -1,24 +1,16 @@
-let turgutX = 112;
-let turgutY = 108;
-const turgutWidth = 16;
-const turgutHeight = 16;
-let counterWalk = 0;
-let currentImage;
-// position de mapImage
-let mapImageX = -360;
-let mapImageY = -220;
+
 function drawGame() {
   // Configuration du canvas
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  ctx.imageSmoothingEnabled = false;
-
-  // Chargement des images
-  const mapImage = new Image();
-  mapImage.src = "./imageOfMap/map.png";
+  let turgutX = 116;
+  let turgutY = 116;
+  const turgutWidth = 16;
+  const turgutHeight = 16;
+  let counterWalk = 0;
+  let currentImage;
+  // position de mapImage
+  let mapImageX = -360;
+  let mapImageY = -220;
   // découpe de l'image de turgutComplete
-
-  // Chargement des images de Turğut
 
   //turgut image deplacement
 
