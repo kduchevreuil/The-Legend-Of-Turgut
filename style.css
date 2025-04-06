@@ -13,7 +13,7 @@
 /* BODY */
 body {
   font-family: "retroFont";
-  background-color: #000;
+  background-color: rgb(57, 57, 57);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -109,7 +109,9 @@ body {
 /* AFFICHAGE DE LA MANETTE */
 #halfJoystick {
   height: 100%;
-  width: 300px;
+  width: 400px;
+  background-color: rgb(57, 57, 57);
+  position: static;
 }
 .leftJoystick {
   width: 150px;
@@ -125,8 +127,8 @@ body {
   height: 130px;
   background-image: url("./imagesOfJoystick/97324.png");
   background-position: 0px 0px;
-  margin-left: 82.5px;
-  margin-right: 82.5px;
+  margin-left: 160px;
+  margin-right: 0;
   margin-top: 125px;
   margin-bottom: 125px;
   transform: scale(1.2);
@@ -147,7 +149,7 @@ body {
   height: 455px;
   background-color: #000000;
   margin: auto;
-  padding: 0;
+  padding: auto;
   display: flex;
   flex-wrap: wrap;
 }
@@ -215,10 +217,12 @@ body {
   height: 130px;
   background-image: url("./imagesOfJoystick/97324.png");
   background-position: -810px 0px;
+  margin-left: 50px;
 }
 .RBButton {
   width: 230px;
   height: 130px;
   background-image: url("./imagesOfJoystick/97324.png");
   background-position: 0px 130px;
+  margin-left: 50px;
 }
