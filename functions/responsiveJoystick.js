@@ -6,9 +6,6 @@ function responsiveJoystick() {
     const screenHeight = window.innerHeight;
     // Sélectionner les deux demi-joysticks avec une classe
 
-
-    console.log(halfJoysticks);
-
     // Joystick gauche
     halfJoysticks[0].style.position = 'absolute';
     halfJoysticks[0].style.top = '0px';

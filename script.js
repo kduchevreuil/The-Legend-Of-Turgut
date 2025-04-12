@@ -3,6 +3,7 @@ import titleScreenClignote from "./functions/titleScreenClignote.js";
 import musicPlayTitleScreen from "./functions/musicPlayTitleScreen.js";
 import animationOfResponsiveJoystick from "./functions/animationOfResponsiveJoystick.js";
 import responsiveJoystick from "./functions/responsiveJoystick.js";
+import keyboardEvent from "./functions/keyboardEvent.js";
 
 // Appel de la fonction responsiveScreenGame pour ajuster la taille de l'écran de jeu
 responsiveScreenGame();
@@ -18,4 +19,5 @@ animationOfResponsiveJoystick();
 responsiveJoystick();
 // Appel de la fonction responsiveJoystick lors du redimensionnement de la fenêtre
 window.addEventListener("resize", responsiveJoystick);
-// Appel de la fonction halfJoystikPlace pour placer le joystick
+// Appel de la fonction keyboardEvent pour gérer les événements clavier
+keyboardEvent();
