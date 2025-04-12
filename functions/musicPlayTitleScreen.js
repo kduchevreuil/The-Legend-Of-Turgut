@@ -26,12 +26,13 @@ function musicPlayTitleScreen() {
                         // arreter la fonction TitleScreenClignote
                         titreClignote.style.scale = '1';
                         titleScreen.style.opacity = `${1 - i}`;
-                        historyScreen.style.opacity = `${0 + i}`; // Appliquer l'opacité à l'écran d'histoire
                         i += 0.01; // Ajuster la vitesse de fondu
+
 
                     } else {
                         clearInterval(fadeOut);
                         let historyScreen = document.getElementById('historyScreen');
+                        historyScreen.style.opacity = `1`; // Appliquer l'opacité à l'écran d'histoire
                         historyScreen.style.position = 'absolute';
                         historyScreen.style.top = '0';
                         historyScreen.style.left = '0';
