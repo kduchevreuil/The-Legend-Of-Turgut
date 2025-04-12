@@ -100,11 +100,20 @@ body {
   top: 0px;
   left: 0px;
   background-image: url("./imageOfMap/map.png");
-  width: 236px;
-  height: 236px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   z-index: -2;
+  background-repeat: no-repeat;
 }
-/* HistoryScreen */
+/* canvas */
+#canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  top: 118px;
+  left: 118px;
+}
 
 /* AFFICHAGE DE LA MANETTE */
 #halfJoystick {

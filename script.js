@@ -4,6 +4,7 @@ import musicPlayTitleScreen from "./functions/musicPlayTitleScreen.js";
 import animationOfResponsiveJoystick from "./functions/animationOfResponsiveJoystick.js";
 import responsiveJoystick from "./functions/responsiveJoystick.js";
 import keyboardEvent from "./functions/keyboardEvent.js";
+import checkColorCollision from "./functions/checkColorCollision.js";
 
 // Appel de la fonction responsiveScreenGame pour ajuster la taille de l'écran de jeu
 responsiveScreenGame();
@@ -21,3 +22,5 @@ responsiveJoystick();
 window.addEventListener("resize", responsiveJoystick);
 // Appel de la fonction keyboardEvent pour gérer les événements clavier
 keyboardEvent();
+// Appel de la fonction checkColorCollision pour vérifier les collisions de couleur
+setInterval(checkColorCollision, 1000); // Vérifie toutes les secondes
