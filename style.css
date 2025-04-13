@@ -65,7 +65,7 @@ body {
 
 /* JOUEUR DU JEU AU MILIEU DE L ECRAN */
 #Turgut {
-  background-image: url("./ImagesOfTurgut/AllImages.png");
+  background-image: url("./ImagesOfTurgut/71.png");
   width: 16px;
   height: 16px;
   position: absolute;
@@ -113,6 +113,7 @@ body {
   left: 0px;
   top: 118px;
   left: 118px;
+  opacity: 0.5;
 }
 
 /* AFFICHAGE DE LA MANETTE */

@@ -8,8 +8,9 @@ function keyboardEvent() {
     let background = document.getElementById("mapOfLand");
     let TurgutPositionX = 0;
     let TurgutPositionY = 0;
-    let vitesse = 1;
+    let vitesse = 1.5;
     let turgut = document.getElementById("Turgut");
+    let directionOfturgut;
 
     addEventListener("keydown", function (event) {
 
@@ -25,7 +26,7 @@ function keyboardEvent() {
         if (event.key === "s") {
             // Code pour le mouvement vers le bas
             directionOfCross[6].style.top = "140px";
-            turgut.style.backgroundImage = `url("../../ImagesOfTurgut/71.png")`;
+            turgut.style.backgroundImage = `url("../ImagesOfTurgut/71.png")`;
             TurgutPositionY = TurgutPositionY - vitesse;
             background.style.backgroundPositionY = TurgutPositionY + "px";
         }
@@ -33,7 +34,7 @@ function keyboardEvent() {
         if (event.key === "q") {
             // Code pour le mouvement vers la gauche
             directionOfCross[10].style.left = "-50px";
-            turgut.style.backgroundImage = `url("../../ImagesOfTurgut/71.png")`;
+            turgut.style.backgroundImage = `url("../ImagesOfTurgut/32.png")`;
             TurgutPositionX = TurgutPositionX + vitesse;
             background.style.backgroundPositionX = TurgutPositionX + "px";
         }
@@ -41,7 +42,7 @@ function keyboardEvent() {
         if (event.key === "d") {
             // Code pour le mouvement vers la droite
             directionOfCross[8].style.left = "140px";
-            turgut.style.backgroundImage = `url("../../ImagesOfTurgut/71.png")`;
+            turgut.style.backgroundImage = `url("../ImagesOfTurgut/03.png")`;
             TurgutPositionX = TurgutPositionX - vitesse;
             background.style.backgroundPositionX = TurgutPositionX + "px";
         }
