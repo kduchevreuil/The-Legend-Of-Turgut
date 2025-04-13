@@ -17,7 +17,7 @@ function keyboardEvent() {
         // si la touhce "z " est pressée, on fait un mouvement vers le haut
         if (event.key === "z") {
             directionOfCross[4].style.top = "-50px";//haut
-            turgut.style.backgroundImage = `url("../ImagesOfTurgut/12.png")`;
+            turgut.style.backgroundImage = `url("./ImagesOfTurgut/12.png")`;
             TurgutPositionY = TurgutPositionY + vitesse;
             background.style.backgroundPositionY = TurgutPositionY + "px";
 
@@ -26,7 +26,7 @@ function keyboardEvent() {
         if (event.key === "s") {
             // Code pour le mouvement vers le bas
             directionOfCross[6].style.top = "140px";
-            turgut.style.backgroundImage = `url("../ImagesOfTurgut/71.png")`;
+            turgut.style.backgroundImage = `url("./ImagesOfTurgut/71.png")`;
             TurgutPositionY = TurgutPositionY - vitesse;
             background.style.backgroundPositionY = TurgutPositionY + "px";
         }
@@ -34,7 +34,7 @@ function keyboardEvent() {
         if (event.key === "q") {
             // Code pour le mouvement vers la gauche
             directionOfCross[10].style.left = "-50px";
-            turgut.style.backgroundImage = `url("../ImagesOfTurgut/32.png")`;
+            turgut.style.backgroundImage = `url("./ImagesOfTurgut/32.png")`;
             TurgutPositionX = TurgutPositionX + vitesse;
             background.style.backgroundPositionX = TurgutPositionX + "px";
         }
@@ -42,7 +42,7 @@ function keyboardEvent() {
         if (event.key === "d") {
             // Code pour le mouvement vers la droite
             directionOfCross[8].style.left = "140px";
-            turgut.style.backgroundImage = `url("../ImagesOfTurgut/03.png")`;
+            turgut.style.backgroundImage = `url("./ImagesOfTurgut/03.png")`;
             TurgutPositionX = TurgutPositionX - vitesse;
             background.style.backgroundPositionX = TurgutPositionX + "px";
         }
