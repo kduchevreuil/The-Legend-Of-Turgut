@@ -1,75 +1,80 @@
 function checkColorCollision() {
     const prohibitedColors = ["#6ab417", "#ae6c37", "#211640"];
-
     const turgut = document.getElementById("Turgut");
     const mapOfLand = document.getElementById("mapOfLand");
     const canvas = document.getElementById("canvas");
-
-    if (!turgut || !mapOfLand || !canvas) {
-        console.error("Un ou plusieurs éléments nécessaires sont introuvables");
-        return;
-    }
-
     const ctx = canvas.getContext("2d");
+
+    const positionInitialX = 118;
+    const positionInitialY = 118;
+    const sampleWidth = 16;
+    const sampleHeight = 16;
+
+    // Obtenir la position du background
     const computedStyle = window.getComputedStyle(mapOfLand);
-    const backgroundImage = computedStyle.backgroundImage;
+    const backgroundX = parseInt(computedStyle.backgroundPositionX, 10) || 0;
+    const backgroundY = parseInt(computedStyle.backgroundPositionY, 10) || 0;
 
-    // Extraire l'URL de l'image de fond (format: url("..."))
-    const match = backgroundImage.match(/url\("?(.+?)"?\)/);
-    if (!match) {
-        console.error("Image de fond introuvable");
-        return;
-    }
+    // Extraire l'URL de l'image du background
+    const backgroundImageURL = computedStyle.backgroundImage.slice(5, -2); // enlève url("...")
 
-    const imageUrl = match[1];
-    const image = new Image();
-    image.crossOrigin = "anonymous"; // Si image externe
+    // Créer une image à partir de l'URL du background
+    const bgImage = new Image();
+    bgImage.src = backgroundImageURL;
 
-    image.onload = function () {
-        const turgutRect = turgut.getBoundingClientRect();
-        const mapRect = mapOfLand.getBoundingClientRect();
+    bgImage.onload = () => {
+        // Créer un canvas temporaire pour échantillonner une zone de l’image
+        const tempCanvas = document.createElement("canvas");
+        tempCanvas.width = sampleWidth;
+        tempCanvas.height = sampleHeight;
+        const tempCtx = tempCanvas.getContext("2d");
 
-        const turgutX = turgutRect.left - mapRect.left;
-        const turgutY = turgutRect.top - mapRect.top;
-        const turgutWidth = turgut.offsetWidth;
-        const turgutHeight = turgut.offsetHeight;
+        // Dessiner une portion de l’image sur le canvas temporaire
+        tempCtx.drawImage(
+            bgImage,
+            positionInitialX + backgroundX,
+            positionInitialY + backgroundY,
+            sampleWidth,
+            sampleHeight,
+            0,
+            0,
+            sampleWidth,
+            sampleHeight
+        );
 
-        // Ajuster le canvas pour correspondre à la taille de `Turgut`
-        canvas.width = turgutWidth;
-        canvas.height = turgutHeight;
+        // Récupérer les données de pixels
+        const imageData = tempCtx.getImageData(0, 0, sampleWidth, sampleHeight).data;
 
-        // Dessiner uniquement la portion de l’image de fond correspondant à `Turgut`
-        ctx.drawImage(image, turgutX, turgutY, turgutWidth, turgutHeight, 0, 0, turgutWidth, turgutHeight);
-
-        // Lire les couleurs à cette position
-        const imageData = ctx.getImageData(0, 0, turgutWidth, turgutHeight);
-        const data = imageData.data;
-        const colorsInContact = new Set();
-
-        for (let i = 0; i < data.length; i += 4) {
-            const r = data[i];
-            const g = data[i + 1];
-            const b = data[i + 2];
-            const a = data[i + 3];
-
-            if (a > 0) {
-                const colorHex = `#${((1 << 24) + (r << 16) + (g << 8) + b)
-                    .toString(16)
-                    .slice(1)}`;
-                colorsInContact.add(colorHex.toLowerCase());
+        // Vérifier s'il y a collision avec une couleur interdite
+        for (let i = 0; i < imageData.length; i += 4) {
+            const r = imageData[i];
+            const g = imageData[i + 1];
+            const b = imageData[i + 2];
+            const hexColor = rgbToHex(r, g, b);
+            if (prohibitedColors.includes(hexColor)) {
+                console.log("Collision détectée avec la couleur :", hexColor);
+                return true;
             }
         }
 
-        const collisionDetected = [...colorsInContact].some(color => prohibitedColors.includes(color));
-        console.log(collisionDetected ? "Collision détectée avec une couleur interdite" : "Pas de collision détectée");
+        console.log("Pas de collision détectée.");
+        return false;
     };
-
-    image.onerror = function () {
-        console.error("Erreur lors du chargement de l'image");
-    };
-
-    image.src = imageUrl;
 }
+
+// Convertit les valeurs RGB en code hexadécimal
+function rgbToHex(r, g, b) {
+    return (
+        "#" +
+        [r, g, b]
+            .map((x) => {
+                const hex = x.toString(16);
+                return hex.length === 1 ? "0" + hex : hex;
+            })
+            .join("")
+    );
+}
+
 
 
 
