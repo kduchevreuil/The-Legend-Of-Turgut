@@ -12,14 +12,20 @@ function keyboardEvent() {
     let turgut = document.getElementById("Turgut");
     let directionOfturgut;
 
+
+
+
     addEventListener("keydown", function (event) {
 
         // si la touhce "z " est pressée, on fait un mouvement vers le haut
         if (event.key === "z") {
             directionOfCross[4].style.top = "-50px";//haut
-            turgut.style.backgroundImage = `url("./ImagesOfTurgut/12.png")`;
+            // alterner entre les images row-3-column-1 et row-3-column-2
+
+
             TurgutPositionY = TurgutPositionY + vitesse;
             background.style.backgroundPositionY = TurgutPositionY + "px";
+            directionOfturgut = "haut";
 
         }
         // si la touche "s" est pressée, on fait un mouvement vers le bas
@@ -29,6 +35,7 @@ function keyboardEvent() {
             turgut.style.backgroundImage = `url("./ImagesOfTurgut/71.png")`;
             TurgutPositionY = TurgutPositionY - vitesse;
             background.style.backgroundPositionY = TurgutPositionY + "px";
+            directionOfturgut = "bas";
         }
         // si la touche "q" est pressée, on fait un mouvement vers la gauche
         if (event.key === "q") {
@@ -37,6 +44,7 @@ function keyboardEvent() {
             turgut.style.backgroundImage = `url("./ImagesOfTurgut/32.png")`;
             TurgutPositionX = TurgutPositionX + vitesse;
             background.style.backgroundPositionX = TurgutPositionX + "px";
+            directionOfturgut = "gauche";
         }
         // si la touche "d" est pressée, on fait un mouvement vers la droite
         if (event.key === "d") {
@@ -45,6 +53,7 @@ function keyboardEvent() {
             turgut.style.backgroundImage = `url("./ImagesOfTurgut/03.png")`;
             TurgutPositionX = TurgutPositionX - vitesse;
             background.style.backgroundPositionX = TurgutPositionX + "px";
+            directionOfturgut = "droite";
         }
         // u = x sur la mannette de jeu
         if (event.key === "u") {
@@ -85,6 +94,12 @@ function keyboardEvent() {
         // si la touhce "z " est pressée, on fait un mouvement vers le haut
         if (event.key === "z") {
             directionOfCross[4].style.top = "46px";
+            // stopper l'intervalle de déplacement
+            directionOfturgut = "stop";
+            turgut.style.backgroundImage = `url("./ImagesOfTurgut/row-3-column-3.png")`;
+
+
+
         }
         // si la touche "s" est pressée, on fait un mouvement vers le bas
         if (event.key === "s") {
@@ -141,5 +156,6 @@ function keyboardEvent() {
     );
 
 }
+
 
 export default keyboardEvent;

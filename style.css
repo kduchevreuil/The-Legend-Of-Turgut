@@ -114,6 +114,9 @@ body {
   top: 118px;
   left: 118px;
   opacity: 0.5;
+  width: 18px;
+  height: 18px;
+  z-index: -2;
 }
 
 /* AFFICHAGE DE LA MANETTE */
